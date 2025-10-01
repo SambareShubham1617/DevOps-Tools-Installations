@@ -1,1 +1,28 @@
+## AWS CLI v2 Installation (Ubuntu)
 
+Follow these steps to install **AWS CLI v2** on Ubuntu:
+
+---
+
+Step 1: Update System Packages
+sudo apt update -y
+
+Step 2: Install Dependencies (unzip & curl)
+sudo apt install unzip curl -y
+
+Step 3: Download AWS CLI v2 Installer
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
+     -o "awscliv2.zip"
+	 
+Step 4: Extract the Installer
+unzip awscliv2.zip
+
+Step 5: Run the Installer
+sudo ./aws/install
+
+Step 6: Verify Installation
+aws --version
+
+If installed correctly, you should see output like:
+
+aws-cli/2.x.x Python/3.x Linux/x86_64
