@@ -2,8 +2,6 @@
 
 Follow these steps to install **AWS CLI v2** on Ubuntu:
 
----
-
 Step 1: Update System Packages
 sudo apt update -y
 
