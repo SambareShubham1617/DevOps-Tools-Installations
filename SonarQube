@@ -28,3 +28,7 @@ You should see sonarqube running.
 
 Step 6:Access SonarQube UI
 Open a browser: http://<EC2-Public-IP>:9000
+
+Step 7:Verification
+curl http://localhost:9000
+👉 If successful, you should get an HTML response.
