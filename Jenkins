@@ -1,1 +1,40 @@
+Setting Up Jenkins on EC2(Ubuntu)
+
+Step 1: Install Java (Jenkins dependency)
+
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre -y
+
+Ensures correct Java version is installed
+java --version
+
+Step 2: Add Jenkins Repo & Key
+Download and add Jenkins key
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+Add Jenkins repo
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
+Step 3: Install Jenkins
+sudo apt update
+sudo apt install jenkins -y
+
+Step 4: Enable & Start Service
+Enable Service
+sudo systemctl enable jenkins
+
+Start Service
+sudo systemctl start jenkins
+
+Step 5: Verify
+sudo systemctl status jenkins
+
+Step 6: Access Jenkins
+Open browser:http://<EC2-Public-IP>:8080
+
+Get initial admin password:sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 
